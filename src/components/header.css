@@ -1,0 +1,12 @@
+.main {
+    border-radius: 50%;
+   
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+   
+}

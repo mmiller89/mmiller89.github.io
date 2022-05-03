@@ -1,0 +1,31 @@
+.main-sec{
+    display: flex;
+    margin-top: 100px;
+  
+}
+
+.greet-image{
+    margin-left: 50px;
+}
+
+.greetings {
+    text-align: left;
+    font-size: 24px;
+ 
+}
+
+.dog-speech {
+    font-size: 14px;
+ }
+
+ .speech {
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 70%;
+    max-width: 80%;
+}
+
+.CV {
+    margin: 20px;
+
+}
