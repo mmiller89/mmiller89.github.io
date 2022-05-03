@@ -19,8 +19,11 @@ const Main = () => {
                         </div>
                     </div>
                     <div className="col-sm">
-                        <img src={wordicon} className="CV" alt="Word Icon" height="50px" width="50px"></img><a href="https://docs.google.com/document/d/1YI24RKJT3IPsYN4XjBSRqOGW94YCF0bdYp2EsjJawYg/edit?usp=sharing">Resume</a>
-                        <img src={wordicon} className="CV" alt="Word Icon" height="50px" width="50px"></img><a href="https://docs.google.com/document/d/17ToKZKT_NZ08ZwUQKwhZpg5xa3tGEi4nLlHoFq94HIY/edit?usp=sharing">Cover Letter</a>
+                            <img src={wordicon} className="CV" alt="Word Icon" height="50px" width="50px"></img><a href="https://docs.google.com/document/d/1YI24RKJT3IPsYN4XjBSRqOGW94YCF0bdYp2EsjJawYg/edit?usp=sharing">Resume</a>
+                        <div className="col-sm">
+                            <img src={wordicon} className="CV" alt="Word Icon" height="50px" width="50px"></img><a href="https://docs.google.com/document/d/17ToKZKT_NZ08ZwUQKwhZpg5xa3tGEi4nLlHoFq94HIY/edit?usp=sharing">Cover Letter</a>
+                        </div>
+                       
                     </div>
                 
               </div>
