@@ -1,0 +1,32 @@
+table {
+    margin: auto;
+    table-layout:fixed;
+    max-width: 50%;
+}
+
+td {
+   height: 3em;
+   vertical-align: middle;
+   
+}
+
+table td:hover {
+    background-color: green;
+}
+
+button {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 10px;
+}
+
+.card {
+    width: 30%;
+    margin: auto;
+}
+
+.red {
+    background-color: red;
+}
+
+
+
