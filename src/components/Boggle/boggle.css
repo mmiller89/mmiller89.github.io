@@ -1,7 +1,7 @@
 table {
     margin: auto;
     table-layout:fixed;
-    max-width: 50%;
+    max-width: 80%;
 }
 
 td {
@@ -20,8 +20,12 @@ button {
 }
 
 .card {
-    width: 30%;
+    width: 50%;
     margin: auto;
+}
+
+.card-body{
+    line-height: normal;
 }
 
 .red {
