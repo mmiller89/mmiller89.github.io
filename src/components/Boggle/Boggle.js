@@ -276,11 +276,12 @@ const Boggle = () => {
 
     return (
         <div>
+            <center>
             <h1 className="centered">Boggle</h1>
             <h3><strong>Directions</strong>: Click the letter squares to form a word. Letters must be connected</h3>
-            <div style={{ color: `${correctCol.color}` }}>{correctCol.text}</div>
+            <div className="input" style={{ color: `${correctCol.color}` }}>{correctCol.text}</div>
             <div className="card">
-                <div className='card-body'>
+                <div className='card-body input'>
                 🤓{inputValue}
                 </div>
                 
@@ -320,8 +321,10 @@ const Boggle = () => {
                     </tr>
                 </tbody>
             </table>
+            </center>
         </div>
     )
+
 }
 
 

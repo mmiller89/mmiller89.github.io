@@ -5,10 +5,10 @@ import './header.css'
 const Header = () => {
     return (
         <div>
-            <div className = "container-fluid header">
+            <div>
                 <img src={mainicon} className="main" alt="Title Logo" width="300px" height="300px"></img>
             </div>
-            <h1 className='header'>Junior Software Developer</h1>
+            
         </div>
         
     )

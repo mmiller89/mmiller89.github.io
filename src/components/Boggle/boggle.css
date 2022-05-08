@@ -1,12 +1,14 @@
 table {
     margin: auto;
     table-layout:fixed;
-    max-width: 100%;
+    max-width: 80%;
 }
 
 td {
-   height: 3em;
+   height: 5em;
    vertical-align: middle;
+   text-align: center;
+   font-size: 24px;
    
 }
 
@@ -17,11 +19,10 @@ table td:hover {
 button {
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin: 10px;
+   
 }
-
 .card {
-    width: 50%;
-    margin: auto;
+    width: 50%; 
 }
 
 .card-body{
@@ -32,5 +33,18 @@ button {
     background-color: red;
 }
 
+.instructions {
+    margin-top: 50px;
+    text-align: center;
+}
 
+.centered {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    
+}
 
+.input{
+    font-weight: bold;
+    font-size: 32px;
+}

@@ -1,43 +1,28 @@
 .main-sec{
     display: flex;
-    margin-top: 100px;
+    margin-top: 80px;
     
   
 }
 
-@media only screen and (max-width: 780px) {
-    .greet-image{
-        margin: 50px auto auto auto;
+@media (min-width: 600px) {
+    .greet-image {
+        margin: auto;
     }
 }
 
 
 .greet-image{
-    margin-left: 30px;
+    margin-left: 100px;
+    margin-bottom: 50px;
     border-radius: 10%;
-    position: relative;
-    top: -40px;
+
 }
 
 .greetings {
-    text-align: left;
-    font-size: 24px;
-   
-
- 
-}
-
-
-
- .speech {
-    margin-left: 10px;
-    background-color: white;
-    border-radius: 70%;
-    max-width: 80%;
-    text-align: center;
-}
-.CV {
-    margin: 20px;
+    font-size: 26px;
+    text-shadow: 1px 1px white;
+    
 }
 
 .centered {
@@ -46,18 +31,24 @@
     
 }
 
-div {
-    font-weight: bold;
-    font-size: 32px;
-    text-align: center;
-}
-
 h1 {
-    font-family: cursive;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
-.quote {
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: center;
+
+
+.nav-link {
+    font-size: 32px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-link {
+        font-size: 18px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-bottom: 20px;
+        
+    }
 }

@@ -1,0 +1,59 @@
+.centered {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    
+}
+
+.link-text {
+    font-size: 48px;
+    color: purple;
+    text-shadow: 1px 1px black;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+
+.grad-pic {
+    margin-right: 150px;
+    border-radius: 10px;
+}
+
+
+
+.link-img {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .link-img {
+        height: 50px;
+        width: 50px;
+        margin-left: 50px;
+    }
+    .over{
+       
+        font-size: 13px;
+        
+        
+    }
+
+    .grad-pic{
+        height: 0px;
+        width: 0px;
+        
+    }
+
+    .link-text {
+        font-size: 12px;
+        color: purple;
+        
+        
+    }
+}
+
+
