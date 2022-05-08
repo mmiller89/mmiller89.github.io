@@ -4,10 +4,13 @@ import './header.css'
 
 const Header = () => {
     return (
-        <div className = "container-fluid header">
-            <img src={mainicon} className="main" alt="Title Logo" width="300px" height="300px"></img>
-            <h1>Software Developer</h1>
+        <div>
+            <div className = "container-fluid header">
+                <img src={mainicon} className="main" alt="Title Logo" width="300px" height="300px"></img>
+            </div>
+            <h1 className='header'>Junior Software Developer</h1>
         </div>
+        
     )
 }
 

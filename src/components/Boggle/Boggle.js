@@ -276,6 +276,8 @@ const Boggle = () => {
 
     return (
         <div>
+            <h1 className="centered">Boggle</h1>
+            <h3><strong>Directions</strong>: Click the letter squares to form a word. Letters must be connected</h3>
             <div style={{ color: `${correctCol.color}` }}>{correctCol.text}</div>
             <div className="card">
                 <div className='card-body'>
@@ -322,6 +324,6 @@ const Boggle = () => {
     )
 }
 
-//I need the cells to turn green when they are clicked on and remain that way.
+
 
 export default Boggle;

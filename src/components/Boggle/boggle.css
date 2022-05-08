@@ -1,7 +1,7 @@
 table {
     margin: auto;
     table-layout:fixed;
-    max-width: 80%;
+    max-width: 100%;
 }
 
 td {

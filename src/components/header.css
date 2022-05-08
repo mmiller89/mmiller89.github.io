@@ -1,6 +1,6 @@
 .main {
     border-radius: 50%;
-   
+    margin-bottom: 50px;
 }
 
 .header {
@@ -8,5 +8,4 @@
     flex-direction: column;
     align-items: center;
     font-size: 36px;
-   
 }
