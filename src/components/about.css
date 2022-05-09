@@ -2,18 +2,9 @@
     margin-top: 100px;
     margin-bottom: 30px;
     text-align: center;
-    
 }
 
-.link-text {
-    font-size: 48px;
-    color: purple;
-    text-shadow: 1px 1px black;
-    float: left;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-}
+
 
 
 .grad-pic {
@@ -24,21 +15,27 @@
 
 
 .link-img {
-    height: 100px;
-    width: 100px;
+    height: 125px;
+    width: 125px;
     margin-bottom: 20px;
+    margin-left: 50px;
+    border-radius: 20%;
+}
+
+.over {
+    font-size: 18px;
 }
 
 @media only screen and (max-width: 600px) {
+   
     .link-img {
-        height: 50px;
-        width: 50px;
+        height: 75px;
+        width: 75px;
         margin-left: 50px;
     }
     .over{
-       
-        font-size: 13px;
-        
+        font-size: 18px;
+        text-align: center;
         
     }
 
@@ -49,11 +46,18 @@
     }
 
     .link-text {
-        font-size: 12px;
+        font-size: 18px;
         color: purple;
         
         
     }
 }
 
-
+@media only screen and (max-width: 1200px){
+    .grad-pic{
+        height: 0px;
+        width: 0px;
+        
+    }
+   
+}

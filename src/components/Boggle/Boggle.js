@@ -277,7 +277,7 @@ const Boggle = () => {
     return (
         <div>
             <center>
-            <h1 className="centered">Boggle</h1>
+            <h1 className="jump-head">Boggle</h1>
             <h3><strong>Directions</strong>: Click the letter squares to form a word. Letters must be connected</h3>
             <div className="input" style={{ color: `${correctCol.color}` }}>{correctCol.text}</div>
             <div className="card">

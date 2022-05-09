@@ -6,6 +6,7 @@ import Boggle from './Boggle/Boggle';
 import APIBody from './API Fetch/APIBody';
 import Contact from './Contact';
 import About from './About'
+import { scroller } from "react-scroll";
 
 
 const Main = () => {
@@ -13,16 +14,27 @@ const Main = () => {
     const reRenderElement = (val) => {
         if (val === 0){
             setWhatToRender(<div><About /></div>)
+            scrollToSection("jump-head");
         } else if (val === 1){
             setWhatToRender(<div><Boggle /></div>)
-            
+            scrollToSection("jump-head");
         } else if (val === 2){
             setWhatToRender(<div><APIBody/></div>)
+            
         } else if (val === 3){
             setWhatToRender(<div><Contact/></div>)
         }
       
+      
         
+    }
+
+    const scrollToSection = (val) => {
+        scroller.scrollTo(val, {
+            duration: 800,
+            delay:0,
+            smoth: "easeInOutQuart"
+        });
     }
     return (
         <div>
@@ -34,10 +46,10 @@ const Main = () => {
                     <div className='col-sm'>
                         <h1 className='header'>Junior Software Developer</h1>
                         <p className='greetings'>I am a Web Developer and Software Engineer in training. Seeking opportunities to grow!</p>
-                        <p className='greetings'><em>Current Goal:</em>Finish Bootcamp (Java/MySQL/Databases) and secure an internship/junior role.</p>
+                        <p className='greetings'>My current goal is to finish Bootcamp (Java/MySQL/Databases) at Promineo Tech and secure an internship/junior role.</p>
                     </div>
                     <div className='col-sm'>
-                    <nav class="nav flex-md-column">
+                    <nav class="nav flex-lg-column">
                         <a class="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About</a>
                         <a class="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Boggle</a>
                         <a class="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API</a>
