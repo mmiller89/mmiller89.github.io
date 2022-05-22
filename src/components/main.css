@@ -6,6 +6,7 @@
 }
 
 
+
 .greet-image{
     margin-left: 100px;
     margin-bottom: 50px;
@@ -14,6 +15,7 @@
 }
 
 .greetings {
+   
     font-size: 26px;
     text-shadow: 1px 1px white;
     
@@ -34,14 +36,18 @@ h1 {
 
 
 .nav-link {
-    font-size: 32px;
+    font-size: 40px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.nav {
+    margin-bottom: 50px;
 }
 
 @media only screen and (max-width: 600px) {
     .nav-link {
-        font-size: 18px;
+        font-size: 25px;
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         margin-bottom: 20px;
         
@@ -60,8 +66,9 @@ h1 {
    
 }
 
-@media only screen and (max-width: 780px){
+@media only screen and (max-width: 1200px){
     .nav-link {
         text-align: center;
+        margin: auto;
     }
 }

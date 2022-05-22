@@ -4,7 +4,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Barlow', sans-serif;
   font-weight: bold;
-  background: linear-gradient(100deg, lightgoldenrodyellow, lavender);
+  background: linear-gradient(315deg, lightgoldenrodyellow 0%, lavender 74%);
   background-size: cover;
   
 }

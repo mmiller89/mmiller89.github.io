@@ -4,7 +4,7 @@ import './header.css'
 
 const Header = () => {
     return (
-        <div>
+        <div className='radiant-1'>
             <div>
                 <img src={mainicon} className="main" alt="Title Logo" width="300px" height="300px"></img>
             </div>

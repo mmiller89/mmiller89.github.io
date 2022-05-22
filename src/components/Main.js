@@ -2,10 +2,9 @@ import React from 'react';
 import greetings from '../images/greetings.png';
 import './main.css';
 import { useState } from 'react';
-import Boggle from './Boggle/Boggle';
+import Projects from './Projects';
 import APIBody from './API Fetch/APIBody';
-import Contact from './Contact';
-import About from './About'
+import About from '../components/About/About.js'
 import { scroller } from "react-scroll";
 
 
@@ -16,13 +15,12 @@ const Main = () => {
             setWhatToRender(<div><About /></div>)
             scrollToSection("jump-head");
         } else if (val === 1){
-            setWhatToRender(<div><Boggle /></div>)
+            setWhatToRender(<div><Projects /></div>)
             scrollToSection("jump-head");
         } else if (val === 2){
-            setWhatToRender(<div><APIBody/></div>)
+            setWhatToRender(<div><APIBody /></div>)
+            scrollToSection("jump-head");
             
-        } else if (val === 3){
-            setWhatToRender(<div><Contact/></div>)
         }
       
       
@@ -41,7 +39,7 @@ const Main = () => {
             <div className='container-fluid'>
                 <div className='row'>
                     <div className='col-sm'>
-                        <img src={greetings} className="greet-image"></img>
+                        <img src={greetings} className="greet-image" alt="Me at a computer desk."></img>
                     </div>
                     <div className='col-sm'>
                         <h1 className='header'>Junior Software Developer</h1>
@@ -49,11 +47,11 @@ const Main = () => {
                         <p className='greetings'>My current goal is to finish Bootcamp (Java/MySQL/Databases) at Promineo Tech and secure an internship/junior role.</p>
                     </div>
                     <div className='col-sm'>
-                    <nav class="nav flex-lg-column">
-                        <a class="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About</a>
-                        <a class="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Boggle</a>
-                        <a class="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API</a>
-                        <a class="nav-link" href="#!" onClick={() => (reRenderElement(3))}>Contact</a>
+                    <nav className="nav flex-xl-column">
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About</a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Projects</a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API</a>
+
                     </nav>
                     </div>
                 </div>

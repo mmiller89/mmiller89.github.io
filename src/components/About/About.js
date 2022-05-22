@@ -1,10 +1,10 @@
 import React from "react";
 import './about.css'
-import greetings2 from '../images/greetings2.jpg';
-import wordicon from '../images/wordicon.png';
-import githubicon from '../images/githubicon.png';
-import gameicon from '../images/gameicon.png';
-import untapped from '../images/untapped.png'
+import greetings2 from '../../images/greetings2.jpg';
+import wordicon from '../../images/wordicon.png';
+import githubicon from '../../images/githubicon.png';
+import gameicon from '../../images/gameicon.png';
+import untapped from '../../images/untapped.png';
 
 const About = () => { 
     return (
@@ -14,7 +14,7 @@ const About = () => {
             </div>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-lg-4 col-4 ">
+                    <div className="col-lg-4 col-4">
                         <div className="d-lg-inline-flex"><a href="https://www.linkedin.com/in/michaelpmiller89/" className="link-text" target="_blank" rel="noreferrer"><img src={wordicon} className="link-img" alt="LinkedIn"/></a></div>
                         <div className="d-lg-inline-flex"><a href="https://github.com/mmiller89" className="link-text" target="_blank" rel="noreferrer"><img src={githubicon} className="link-img" alt="GitHub"/></a></div>
                         <div className="d-lg-inline-flex"><a href="https://www.untapped.io/" className="link-text" target="_blank" rel="noreferrer"><img src={untapped} className="link-img" alt="Untapped"/></a></div>

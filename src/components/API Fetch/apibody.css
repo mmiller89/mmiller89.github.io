@@ -1,0 +1,52 @@
+.main-weather{
+    margin-top: 75px;
+    padding-bottom: 500px;
+    padding-top: 50px;
+    background: radial-gradient(skyblue 100%);
+    text-align: center;
+}
+
+.large-text {
+    font-size: 75px;
+}
+
+
+
+.descriptor-data{
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+
+.descriptor-space {
+    margin: 25px;
+}
+
+.descriptor-title {
+    font-size: 35px;
+    text-shadow: 1px 1px black;
+}
+
+image {
+    margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .descriptor-title {
+        font-size: 18px;
+        text-shadow: 1px 1px black;   
+    }
+
+    .descriptor-data {
+        font-size: 15px;
+    }
+
+
+}
+
+@media only screen and (max-width: 300px) {
+   .main-weather {
+        background: linear-gradient(100deg, lightgoldenrodyellow, lavender);
+   }
+
+
+}
