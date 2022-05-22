@@ -12,6 +12,12 @@ td {
    
 }
 
+.explanation-text {
+    font-size: 25px;
+    text-align: left;
+}
+
+
 table td:hover {
     background-color: green;
 }

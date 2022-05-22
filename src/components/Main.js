@@ -38,16 +38,20 @@ const Main = () => {
         <div>
             <div className='container-fluid'>
                 <div className='row'>
-                    <div className='col-sm'>
+                    <div className='col-lg'>
                         <img src={greetings} className="greet-image" alt="Me at a computer desk."></img>
                     </div>
-                    <div className='col-sm'>
+                    <div className='col-lg'>
                         <h1 className='header'>Junior Software Developer</h1>
-                        <p className='greetings'>I am a Web Developer and Software Engineer in training. Seeking opportunities to grow!</p>
-                        <p className='greetings'>My current goal is to finish Bootcamp (Java/MySQL/Databases) at Promineo Tech and secure an internship/junior role.</p>
+                        <p className='greetings'>I am a junior developer seeking an entry level role in web or application development. I am constantly working to improve my skills.</p>
+                        <center> <p className='greetings'>Current Experience (out of 5)</p>
+                        <p className='greetings'>HTML/CSS (18 months) ⭐⭐⭐</p> 
+                        <p className='greetings'>JavaScript (18 months) ⭐⭐⭐ </p>
+                        <p className='greetings'>React/JSX (10 months) ⭐⭐ </p>
+                        <p className='greetings push-down'>Java (3 months) ⭐⭐ </p></center>
                     </div>
-                    <div className='col-sm'>
-                    <nav className="nav flex-xl-column">
+                    <div className='col-lg'>
+                    <nav className="nav flex-lg-column">
                         <a className="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About</a>
                         <a className="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Projects</a>
                         <a className="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API</a>
@@ -75,8 +79,3 @@ export default Main;
 
 
 
-// <div className="col-sm">
-//    <img src={wordicon} className="CV" alt="Word Icon" height="50px" width="50px"></img><a href="https://docs.google.com/document/d/1YI24RKJT3IPsYN4XjBSRqOGW94YCF0bdYp2EsjJawYg/edit?usp=sharing">Resume</a>
-//    <div className="col-sm">
-//     <img src={wordicon} className="CV" alt="Word Icon" height="50px" width="50px"></img><a href="https://docs.google.com/document/d/17ToKZKT_NZ08ZwUQKwhZpg5xa3tGEi4nLlHoFq94HIY/edit?usp=sharing">Cover Letter</a>
-//     </div>

@@ -5,13 +5,9 @@ import Calculator from './Calculator/Calculator.js';
 
 const Projects = () => {
     return (
-        <div className='container-fluid jump-head'>
-            <div className='row'>
+        <div className='jump-head'>
+            
                 <Boggle />
-            </div>
-            <div className='row'>
-                <Calculator />
-            </div>
         </div>
     )
 }

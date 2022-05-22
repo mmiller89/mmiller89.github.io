@@ -1,5 +1,5 @@
 .main-weather{
-    margin-top: 75px;
+    
     padding-bottom: 500px;
     padding-top: 50px;
     background: radial-gradient(skyblue 100%);
@@ -30,6 +30,10 @@ image {
     margin: auto;
 }
 
+.explanation-text {
+    font-size: 25px;
+    margin-left: 100px;
+}
 @media only screen and (max-width: 600px) {
     .descriptor-title {
         font-size: 18px;

@@ -96,8 +96,8 @@ const APIBody = () => {
     
 
     return (
-        <div className="main-weather jump-head">
-            <div className='location'>
+        <div>
+            <div  className="main-weather jump-head location">
                 
                         <div className='location-timezone text'>
                             <p className='large-text' onClick={navigator.geolocation.getCurrentPosition(retrieveLL, failRetrieve)}>{timeZone}</p>
