@@ -29,7 +29,7 @@ const About = () => {
                        
                     </div>
                     <div className="col-lg-4 col-8">
-                    <h1 className="jump-head"><center>About Me</center></h1>
+                    <h1 className="jump-head font-indie"><center>About Me</center></h1>
                     <p className="over">I'm a motivated professional who is always looking to increase my skillset. Since starting my programming journey, I've managed to get a grasp on front-end web technologies like HTML/CSS/JavaScript and React, and am eager to learn more. I'd love to become a full stack developer one day. <br /><br />I enjoy lifting weights and feeling strong. Some other hobbies I have are video games (playing and creating) and traveling. My favorite memories are my years living in Germany and exploring Europe. <br /><br />Ich spreche Deutsch/Hablo español.</p>
                     </div>
                     <div className="col-lg-4 col-0 d-none d-sm-block">

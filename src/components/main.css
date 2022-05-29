@@ -5,6 +5,25 @@
   
 }
 
+.push-down {
+    margin-bottom: 100px;
+}
+.job-skills-text {
+    font-size: 18px;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+
+
+
+.sixfour {
+   height: 32px;
+   width: 32px; 
+}
+
+.font-indie {
+    font-family: 'Indie Flower', cursive;
+  }
 
 
 .greet-image{
@@ -14,11 +33,17 @@
 
 }
 
+.blue {
+    color: navy;
+}
+
 .greetings {
-    margin-top: 10px;
-    font-size: 26px;
-    text-shadow: 1px 1px white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 24px;
+    text-shadow: 1px 1px lavender;
     text-align: center;
+    font-family: 'Didact Gothic', sans-serif;
     
 }
 
@@ -31,8 +56,9 @@
 .push-down {
     margin-bottom: 100px;
 }
+
 h1 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
     text-align: center;
     
 }
@@ -42,8 +68,9 @@ h1 {
 
 .nav-link {
     font-size: 40px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Indie Flower', cursive;
     margin-bottom: 50px;
+    color: navy;
 }
 
 .nav {
@@ -53,26 +80,42 @@ h1 {
 @media only screen and (max-width: 600px) {
     .nav-link {
         font-size: 25px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: 'Indie Flower', cursive;
         margin-bottom: 20px;
         
     }
-    .greet-image {
-        margin: auto;
-    }
+   
 
     .header {
-        margin-top: 50px;
+        margin-top: 25px;
         margin-bottom: 20px;
     }
+
+    .sixfour {
+        height: 16px;
+        width: 16px; 
+     }
 
    
 }
 
+@media only screen and (max-width: 800px) {
+    .sixfour {
+        height: 16px;
+        width: 16px; 
+     }
+     .push-down {
+        margin-bottom: 0px;
+    }
+    .greet-image {
+        align-items: center;
+    }
+}
 
 @media only screen and (max-width: 1200px){
     .nav-link {
         text-align: center;
         margin: auto;
+        margin-bottom: 50px;
     }
 }

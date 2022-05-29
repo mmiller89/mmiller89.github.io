@@ -2,6 +2,14 @@ import React from 'react';
 import './boggle.css'
 import { useState } from 'react';
 import dictionaryArray from './dictionary.js';
+import useSound from 'use-sound';
+import success from '../../audio/success.wav';
+import wrong from '../../audio/wrong.mp3';
+import touch from '../../audio/clickCell.mp3';
+import miss from '../../audio/miss.wav';
+import music from '../../audio/gamemusic.ogg';
+import ReactAudioPlayer from 'react-audio-player';
+
 
 
 //TO-DOs
@@ -11,11 +19,13 @@ import dictionaryArray from './dictionary.js';
 //Find Boggle word library for dictionary.js 
 
 var letterTracker = []
-var wordsCorrect = 0;
+var correctWordsArray = [];
+var score_points = 0;
+
+
 
 const Boggle = () => {
-    
-    let currentBoard = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    let currentBoard = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
     let letters = [
             ["R","I","F","O","B","X"],
             ["I","F","E","H","E","Y"],
@@ -57,9 +67,9 @@ const Boggle = () => {
             color: ""
         }
     ]);
-    const [placeHold, setPlaceHold] = useState("")
-    
-    
+    const [correctWords, setCorrectWords] = useState("");
+    const [points, setPoints] = useState(0);
+    const [placeHold, setPlaceHold] = useState("");
 
     const [slots0, setSlots0] = useState("");
     const [slots1, setSlots1] = useState("");
@@ -78,27 +88,34 @@ const Boggle = () => {
     const [slots14, setSlots14] = useState("");
     const [slots15, setSlots15] = useState("");
     const [inputValue, setInputValue] = useState("")
-    const [shuffleButton, setShuffleButton] = useState("Shuffle")
+    const [PlayButton, setPlayButton] = useState("Play")
     
-
+    const [playCorrect] = useSound(success);
+    const [playWrong] = useSound(wrong);
+    const [playTouch] = useSound(touch);
+    const [playMiss] = useSound(miss);
+    const [audioPlayer, setAudioPlayer] = useState();
    
     
     
-    const shuffleBegin = () => {
-        wordsCorrect = 0;
+    const PlayBegin = () => {
+        setAudioPlayer(<ReactAudioPlayer src={music} autoPlay loop controls/>)
+        score_points = 0;
+        correctWordsArray = [];
+        updateCorrectWords(correctWordsArray);
         setCorrectCol({
             ...correctCol,
             text: 'Good luck!',
             color: 'black'
         })
             var timerMinutes = 60 * 3
-            shuffleLetters();
+            PlayLetters();
             setBoard();
-            setShuffleButton(timer(timerMinutes))
+            setPlayButton(timer(timerMinutes))
       
        
     }
-    const shuffleLetters = () => {
+    const PlayLetters = () => {
         for (let i=0; i <= 15; i++){
             let newLetter = letters[i]
             currentBoard[i] = newLetter[Math.floor(Math.random() * newLetter.length)];
@@ -153,7 +170,7 @@ const Boggle = () => {
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
     
-            setShuffleButton(minutes + ":" + seconds)
+            setPlayButton(minutes + ":" + seconds)
     //once timer ends, game is "over" and points are displayed. Press button again to play a new game. High score is tracked.
             if (--timer < 0) {
                 currentBoard.forEach((element, index) => currentBoard[index] = "")
@@ -161,13 +178,14 @@ const Boggle = () => {
                 resetColors();
                 timer = duration;
                 clearInterval(timerCount)
+                setAudioPlayer();
+                score_points = 0;
+                setPoints(0);
                 setInputValue("")
-                setShuffleButton("Shuffle")
-                setCorrectCol({
-                    ...correctCol,
-                    text: `You got ${wordsCorrect} words correct`,
-                    color: 'black'
-                })
+                setPlayButton("Play")
+                correctWordsArray = [];
+                updateCorrectWords(correctWordsArray);
+               
             }
         }, 1000);
     }
@@ -180,54 +198,79 @@ const Boggle = () => {
         } else {
             setInputValue(inputValue + slotVal)
             
-        }    
+        }  
+
+        
+        
+        
     }
 
     const tdColorCheck = (slotVal, slotClicked) => {
+        
         letterTracker.push(slotClicked);
-        console.log(letterTracker);
+        
         let validConnection = isCorrectWord(slotClicked);
-        console.log(validConnection)
-        slotClicked === 0 && shuffleButton !== "Shuffle" && validConnection === true ? setZeroColor('green') : setPlaceHold('')
-        slotClicked === 1 && shuffleButton !== "Shuffle" && validConnection === true ? setOneColor('green') :  setPlaceHold('')
-        slotClicked === 2 && shuffleButton !== "Shuffle" && validConnection === true ? setTwoColor('green') :  setPlaceHold('')
-        slotClicked === 3 && shuffleButton !== "Shuffle" && validConnection === true ? setThreeColor('green') :  setPlaceHold('')
-        slotClicked === 4 && shuffleButton !== "Shuffle" && validConnection === true ? setFourColor('green') :  setPlaceHold('')
-        slotClicked === 5 && shuffleButton !== "Shuffle" && validConnection === true ? setFiveColor('green') :  setPlaceHold('')
-        slotClicked === 6 && shuffleButton !== "Shuffle" && validConnection === true ? setSixColor('green') :  setPlaceHold('')
-        slotClicked === 7 && shuffleButton !== "Shuffle" && validConnection === true ? setSevenColor('green') :  setPlaceHold('')
-        slotClicked === 8 && shuffleButton !== "Shuffle" && validConnection === true ? setEightColor('green') :  setPlaceHold('')
-        slotClicked === 9 && shuffleButton !== "Shuffle" && validConnection === true ? setNineColor('green') :  setPlaceHold('')
-        slotClicked === 10 && shuffleButton !== "Shuffle" && validConnection === true ? setTenColor('green') :  setPlaceHold('')
-        slotClicked === 11 && shuffleButton !== "Shuffle" && validConnection === true? setElevenColor('green') :  setPlaceHold('')
-        slotClicked === 12 && shuffleButton !== "Shuffle" && validConnection === true ? setTwelveColor('green') :  setPlaceHold('')
-        slotClicked === 13 && shuffleButton !== "Shuffle" && validConnection === true ? setThirteenColor('green') :  setPlaceHold('')
-        slotClicked === 14 && shuffleButton !== "Shuffle" && validConnection === true ? setFourteenColor('green') :  setPlaceHold('')
-        slotClicked === 15 && shuffleButton !== "Shuffle" && validConnection === true ? setFifteenColor('green') :  setPlaceHold('')
+        
+        slotClicked === 0 && PlayButton !== "Play" && validConnection === true ? setZeroColor('green') : setPlaceHold('')
+        slotClicked === 1 && PlayButton !== "Play" && validConnection === true ? setOneColor('green') :  setPlaceHold('')
+        slotClicked === 2 && PlayButton !== "Play" && validConnection === true ? setTwoColor('green') :  setPlaceHold('')
+        slotClicked === 3 && PlayButton !== "Play" && validConnection === true ? setThreeColor('green') :  setPlaceHold('')
+        slotClicked === 4 && PlayButton !== "Play" && validConnection === true ? setFourColor('green') :  setPlaceHold('')
+        slotClicked === 5 && PlayButton !== "Play" && validConnection === true ? setFiveColor('green') :  setPlaceHold('')
+        slotClicked === 6 && PlayButton !== "Play" && validConnection === true ? setSixColor('green') :  setPlaceHold('')
+        slotClicked === 7 && PlayButton !== "Play" && validConnection === true ? setSevenColor('green') :  setPlaceHold('')
+        slotClicked === 8 && PlayButton !== "Play" && validConnection === true ? setEightColor('green') :  setPlaceHold('')
+        slotClicked === 9 && PlayButton !== "Play" && validConnection === true ? setNineColor('green') :  setPlaceHold('')
+        slotClicked === 10 && PlayButton !== "Play" && validConnection === true ? setTenColor('green') :  setPlaceHold('')
+        slotClicked === 11 && PlayButton !== "Play" && validConnection === true? setElevenColor('green') :  setPlaceHold('')
+        slotClicked === 12 && PlayButton !== "Play" && validConnection === true ? setTwelveColor('green') :  setPlaceHold('')
+        slotClicked === 13 && PlayButton !== "Play" && validConnection === true ? setThirteenColor('green') :  setPlaceHold('')
+        slotClicked === 14 && PlayButton !== "Play" && validConnection === true ? setFourteenColor('green') :  setPlaceHold('')
+        slotClicked === 15 && PlayButton !== "Play" && validConnection === true ? setFifteenColor('green') :  setPlaceHold('')
         if (validConnection === true){
+            playTouch();
             letterCheck(slotVal);
+            
         } else {
+            playMiss();
             letterTracker.pop();
         }
         
     }
 
     const clearWord = () => {
+        if (inputValue !== ""){
+            playMiss();
+        }
+        
         setInputValue("")
         resetColors();
     }
 
     const checkWord = () => {
-        console.log(inputValue)
-        if (shuffleButton !== "Shuffle" && dictionaryArray.includes(inputValue.toLowerCase())){
+        if (correctWordsArray.includes(inputValue) == true){
+            playWrong();
+            setCorrectCol({
+                ...correctCol,
+                text: 'Already Used!',
+                color: 'red'
+            })
+        } else if (PlayButton !== "Play" && dictionaryArray.includes(inputValue.toLowerCase()) ){
+          playCorrect();
           setCorrectCol({
               ...correctCol,
               text: 'Correct!',
               color: 'green'
           })
-          wordsCorrect ++
+          determinePoints(inputValue);
+          setPoints(points + score_points);
+          correctWordsArray.push(inputValue)
+          console.log(correctWordsArray);
+          updateCorrectWords(correctWordsArray);
+          
             
         } else {
+            playWrong();
             setCorrectCol({
                 ...correctCol,
                 text: 'Wrong!',
@@ -235,9 +278,10 @@ const Boggle = () => {
             })
             
         }
-      
+        
         setInputValue("")
         resetColors()
+
     }
     
     const isCorrectWord = (slotClicked) => {
@@ -272,56 +316,101 @@ const Boggle = () => {
        
        
     }
+
+    const determinePoints = (word) => {
+        score_points = 0;
+            if (word.length <= 4){
+                score_points += 1;
+            } else if (word.length == 5){
+                score_points += 2;
+            } else if (word.length == 6){
+                score_points += 3;
+            } else if (word.length == 7){
+                score_points += 5;
+            } else {
+                score_points += 11;
+            }
+            
+          
+        }
+        
+    
+
+    const updateCorrectWords = (array) => {
+        setCorrectWords(array.map(val => <div>{val}</div>))
+    }
+
+    
     
 
     return (
         <div>
-            <center>
-            <h1 className="jump-head">Boggle</h1>
-            <h3><strong>Directions</strong>: Click the letter squares to form a word. Letters must be connected</h3>
-            <div className="input" style={{ color: `${correctCol.color}` }}>{correctCol.text}</div>
-            <div className="card">
-                <div className='card-body input'>
-                🤓{inputValue}
+            <div className='container-fluid background-img'>
+                <center>
+                       <h1 className="jump-head font-indie">Boggle</h1>
+                        <div>Form words with connected letters.</div>
+                        <div className="input" style={{ color: `${correctCol.color}` }}>{correctCol.text} | Points: {points}</div>
+                        <div className="card">
+                            <div className='card-body input'>
+                            🤓{inputValue}
+                            </div>
+                            
+                        </div>
+                        <button type="button" className="btn btn-lg btn-success" onClick={() => {
+                            if (PlayButton === "Play"){
+                                PlayBegin();
+                            }
+                        } }><span className="start-button controls">{PlayButton}</span></button>
+                        <button type="button" className="btn btn-lg btn-success controls" onClick={checkWord}><span className="start-button">Check</span></button>
+                        <button type="button" className="btn btn-lg btn-success controls" onClick={clearWord}><span className="start-button">Clear</span></button>
+                        
+                        </center> 
+                <div className='row'>
+                    <div className='col-9'>
+                    
+                        <table className="table table-light table-bordered game">
+                            <tbody>
+                                <tr>
+                                    <td className='td-game' style={{ backgroundColor: `${zeroColor}` }} onClick={() => tdColorCheck(slots0, 0, inputValue)}><div>{slots0}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${oneColor}`}} onClick={() => tdColorCheck(slots1, 1, inputValue)}><div>{slots1}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${twoColor}`}} onClick={() => tdColorCheck(slots2, 2, inputValue)}><div>{slots2}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${threeColor}`}} onClick={() => tdColorCheck(slots3, 3, inputValue)}><div>{slots3}</div></td>
+                                </tr>
+                                <tr>
+                                    <td className='td-game' style ={{backgroundColor: `${fourColor}`}} onClick={() => tdColorCheck(slots4, 4, inputValue)}><div>{slots4}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${fiveColor}`}} onClick={() => tdColorCheck(slots5, 5, inputValue)}><div>{slots5}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${sixColor}`}} onClick={() => tdColorCheck(slots6, 6, inputValue)}><div>{slots6}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${sevenColor}`}} onClick={() => tdColorCheck(slots7, 7, inputValue)}><div>{slots7}</div></td>
+                                </tr>
+                                <tr>
+                                    <td className='td-game' style ={{backgroundColor: `${eightColor}`}} onClick={() => tdColorCheck(slots8, 8, inputValue)}><div>{slots8}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${nineColor}`}} onClick={() => tdColorCheck(slots9, 9, inputValue)}><div>{slots9}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${tenColor}`}} onClick={() => tdColorCheck(slots10, 10, inputValue)}><div>{slots10}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${elevenColor}`}} onClick={() => tdColorCheck(slots11, 11, inputValue)}><div>{slots11}</div></td>
+                                </tr>
+                                <tr>
+                                    <td className='td-game' style ={{backgroundColor: `${twelveColor}`}} onClick={() => tdColorCheck(slots12, 12, inputValue)}><div>{slots12}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${thirteenColor}`}} onClick={() => tdColorCheck(slots13, 13, inputValue)}><div>{slots13}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${fourteenColor}`}} onClick={() => tdColorCheck(slots14, 14, inputValue)}><div>{slots14}</div></td>
+                                    <td className='td-game' style ={{backgroundColor: `${fifteenColor}`}} onClick={() => tdColorCheck(slots15, 15, inputValue)}><div>{slots15}</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div className='col-3'>
+                        <h1 className='font-indie word-title'>Word Bank</h1>
+                        <p className='word-bank'>{correctWords}</p>
+                    </div>
                 </div>
+                <div>
+                <center>{audioPlayer}</center>
+                </div>
+
                 
             </div>
-            <button type="button" className="btn btn-lg btn-success" onClick={() => {
-                if (shuffleButton === "Shuffle"){
-                    shuffleBegin();
-                }
-            } }><span className="start-button">{shuffleButton}</span></button>
-            <button type="button" className="btn btn-lg btn-success" onClick={checkWord}><span className="start-button">Check Word</span></button>
-            <button type="button" className="btn btn-lg btn-success" onClick={clearWord}><span className="start-button">Clear</span></button>
-            <table className="table table-light table-bordered">
-                <tbody>
-                    <tr>
-                        <td style={{ backgroundColor: `${zeroColor}` }} onClick={() => tdColorCheck(slots0, 0, inputValue)}><div>{slots0}</div></td>
-                        <td style ={{backgroundColor: `${oneColor}`}} onClick={() => tdColorCheck(slots1, 1, inputValue)}><div>{slots1}</div></td>
-                        <td style ={{backgroundColor: `${twoColor}`}} onClick={() => tdColorCheck(slots2, 2, inputValue)}><div>{slots2}</div></td>
-                        <td style ={{backgroundColor: `${threeColor}`}} onClick={() => tdColorCheck(slots3, 3, inputValue)}><div>{slots3}</div></td>
-                    </tr>
-                    <tr>
-                        <td style ={{backgroundColor: `${fourColor}`}} onClick={() => tdColorCheck(slots4, 4, inputValue)}><div>{slots4}</div></td>
-                        <td style ={{backgroundColor: `${fiveColor}`}} onClick={() => tdColorCheck(slots5, 5, inputValue)}><div>{slots5}</div></td>
-                        <td style ={{backgroundColor: `${sixColor}`}} onClick={() => tdColorCheck(slots6, 6, inputValue)}><div>{slots6}</div></td>
-                        <td style ={{backgroundColor: `${sevenColor}`}} onClick={() => tdColorCheck(slots7, 7, inputValue)}><div>{slots7}</div></td>
-                    </tr>
-                    <tr>
-                        <td style ={{backgroundColor: `${eightColor}`}} onClick={() => tdColorCheck(slots8, 8, inputValue)}><div>{slots8}</div></td>
-                        <td style ={{backgroundColor: `${nineColor}`}} onClick={() => tdColorCheck(slots9, 9, inputValue)}><div>{slots9}</div></td>
-                        <td style ={{backgroundColor: `${tenColor}`}} onClick={() => tdColorCheck(slots10, 10, inputValue)}><div>{slots10}</div></td>
-                        <td style ={{backgroundColor: `${elevenColor}`}} onClick={() => tdColorCheck(slots11, 11, inputValue)}><div>{slots11}</div></td>
-                    </tr>
-                    <tr>
-                        <td style ={{backgroundColor: `${twelveColor}`}} onClick={() => tdColorCheck(slots12, 12, inputValue)}><div>{slots12}</div></td>
-                        <td style ={{backgroundColor: `${thirteenColor}`}} onClick={() => tdColorCheck(slots13, 13, inputValue)}><div>{slots13}</div></td>
-                        <td style ={{backgroundColor: `${fourteenColor}`}} onClick={() => tdColorCheck(slots14, 14, inputValue)}><div>{slots14}</div></td>
-                        <td style ={{backgroundColor: `${fifteenColor}`}} onClick={() => tdColorCheck(slots15, 15, inputValue)}><div>{slots15}</div></td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
+            
+            
         </div>
     )
 

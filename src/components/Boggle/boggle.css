@@ -1,11 +1,32 @@
-table {
-    margin: auto;
+.game{
+    
     table-layout:fixed;
-    max-width: 80%;
+    max-width: 75%;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    
 }
 
-td {
-   height: 5em;
+
+
+.card-body {
+    width: 100%;
+    font-size: 18px;
+    
+}
+.background-img {
+    background: rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+  
+    
+    
+}
+
+
+.td-game {
+   height: 4em;
    vertical-align: middle;
    text-align: center;
    font-size: 24px;
@@ -18,7 +39,7 @@ td {
 }
 
 
-table td:hover {
+.td-game:hover {
     background-color: green;
 }
 
@@ -40,7 +61,7 @@ button {
 }
 
 .instructions {
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -52,5 +73,29 @@ button {
 
 .input{
     font-weight: bold;
-    font-size: 32px;
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .game{
+    
+        table-layout:fixed;
+        max-width: 90%;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        
+    }
+
+    .word-title {
+        font-size: 24px;
+        margin-right: 20px;
+    }
+
+    .controls {
+     
+        width: 100px; 
+        height: 50px;
+       
+    }
 }

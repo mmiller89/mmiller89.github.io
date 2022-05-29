@@ -1,13 +1,29 @@
 .main-weather{
-    
-    padding-bottom: 500px;
     padding-top: 50px;
-    background: radial-gradient(skyblue 100%);
+    background: linear-gradient(315deg, skyblue 0%, lightblue 74%);
     text-align: center;
+    border-radius: 50%;
+    font-family: 'Didact Gothic', sans-serif;
 }
 
 .large-text {
-    font-size: 75px;
+    font-size: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.right-space {
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+.city-selector{
+    margin-bottom: 30px;
+}
+
+.weather-img {
+    height: 300px;
+    width: 300px;
 }
 
 
@@ -34,6 +50,16 @@ image {
     font-size: 25px;
     margin-left: 100px;
 }
+
+@media only screen and (max-width: 800px) {
+    .weather-img {
+        height: 150px;
+        width: 150px;
+    }
+
+
+}
+
 @media only screen and (max-width: 600px) {
     .descriptor-title {
         font-size: 18px;
@@ -43,6 +69,8 @@ image {
     .descriptor-data {
         font-size: 15px;
     }
+
+  
 
 
 }

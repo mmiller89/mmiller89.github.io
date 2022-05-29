@@ -1,13 +1,14 @@
 import React from 'react';
 import Boggle from './Boggle/Boggle';
-import Calculator from './Calculator/Calculator.js';
+import LessonPlans from './LessonPlans/LessonPlans.js'
+import './projects.css'
 
 
 const Projects = () => {
     return (
         <div className='jump-head'>
-            
-                <Boggle />
+                <div className='project'><Boggle /></div>
+                <div className='project'><LessonPlans /></div>
         </div>
     )
 }

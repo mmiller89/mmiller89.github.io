@@ -1,5 +1,6 @@
 import React from 'react';
 import greetings from '../images/greetings.png';
+import link from '../images/link.png';
 import './main.css';
 import { useState } from 'react';
 import Projects from './Projects';
@@ -42,19 +43,35 @@ const Main = () => {
                         <img src={greetings} className="greet-image" alt="Me at a computer desk."></img>
                     </div>
                     <div className='col-lg'>
-                        <h1 className='header'>Junior Software Developer</h1>
+                        <h1 className='header font-indie'>Junior Software Developer</h1>
                         <p className='greetings'>I am a junior developer seeking an entry level role in web or application development. I am constantly working to improve my skills.</p>
-                        <center> <p className='greetings'>Current Experience (out of 5)</p>
-                        <p className='greetings'>HTML/CSS (18 months) ⭐⭐⭐</p> 
-                        <p className='greetings'>JavaScript (18 months) ⭐⭐⭐ </p>
-                        <p className='greetings'>React/JSX (10 months) ⭐⭐ </p>
-                        <p className='greetings push-down'>Java (3 months) ⭐⭐ </p></center>
+                        <h3 className='font-indie'>Current Experience (out of 5)</h3>
+                        <table className='table table-sm push-down'>
+                            <tbody>
+                                <tr>
+                                    <td className='job-skills-text'>HTML/CSS (18 months)</td>
+                                    <td>⭐⭐⭐</td>
+                                </tr>
+                                <tr>
+                                    <td className='job-skills-text'>JavaScript (18 months)</td>
+                                    <td>⭐⭐⭐</td>
+                                </tr>
+                                <tr>
+                                    <td className='job-skills-text'>React/JSX (10 months)</td>
+                                    <td>⭐⭐</td>
+                                </tr>
+                                <tr>
+                                    <td className='job-skills-text'>Java (3 months) </td>
+                                    <td>⭐⭐</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div className='col-lg'>
                     <nav className="nav flex-lg-column">
-                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About</a>
-                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Projects</a>
-                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API</a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About <img src={link} className='sixfour'/></a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Projects <img src={link} className='sixfour'/></a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API <img src={link} className='sixfour'/></a>
 
                     </nav>
                     </div>
