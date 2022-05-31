@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.47038f9f.css",
-    "main.js": "/static/js/main.55436a43.js",
+    "main.js": "/static/js/main.d53f6adc.js",
     "static/js/845.9fad91ed.chunk.js": "/static/js/845.9fad91ed.chunk.js",
     "static/media/gamemusic.ogg": "/static/media/gamemusic.342713016808e1cfb597.ogg",
     "static/media/greetings.png": "/static/media/greetings.6bc6ff14b0323fdec736.png",
@@ -9,17 +9,16 @@
     "static/media/miss.wav": "/static/media/miss.5cebf8f3dd1c0fd6150c.wav",
     "static/media/resume.png": "/static/media/resume.ee9ddea98b41da8429d2.png",
     "static/media/greetings2.jpg": "/static/media/greetings2.7dc1eea471a10e0fd1ea.jpg",
-    "static/media/gameicon.png": "/static/media/gameicon.877e1d2ea21a5fc76b76.png",
     "static/media/snow.gif": "/static/media/snow.aa3cc6b1913a953d4ea5.gif",
     "static/media/clickCell.mp3": "/static/media/clickCell.bc5ec51611cf47601f45.mp3",
     "static/media/wrong.mp3": "/static/media/wrong.01b654edab0a24838b1c.mp3",
     "index.html": "/index.html",
     "main.47038f9f.css.map": "/static/css/main.47038f9f.css.map",
-    "main.55436a43.js.map": "/static/js/main.55436a43.js.map",
+    "main.d53f6adc.js.map": "/static/js/main.d53f6adc.js.map",
     "845.9fad91ed.chunk.js.map": "/static/js/845.9fad91ed.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.47038f9f.css",
-    "static/js/main.55436a43.js"
+    "static/js/main.d53f6adc.js"
   ]
 }
