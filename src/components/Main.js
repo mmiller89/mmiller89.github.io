@@ -44,7 +44,7 @@ const Main = () => {
                     </div>
                     <div className='col-lg'>
                         <h1 className='header font-indie'>Junior Software Developer</h1>
-                        <p className='greetings'>I am a junior developer seeking an entry level role in web or application development. I am constantly working to improve my skills.</p>
+                        <p className='greetings'>Junior developer seeking an entry level role in web or software development. I am constantly working to improve my skills.</p>
                         <h3 className='font-indie'>Current Experience (out of 5)</h3>
                         <table className='table table-sm push-down'>
                             <tbody>
@@ -69,9 +69,9 @@ const Main = () => {
                     </div>
                     <div className='col-lg'>
                     <nav className="nav flex-lg-column">
-                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About <img src={link} className='sixfour'/></a>
-                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Projects <img src={link} className='sixfour'/></a>
-                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API <img src={link} className='sixfour'/></a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(0))}>About <img src={link} className='sixfour' alt="Link Icon"/></a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(1))}>Projects <img src={link} className='sixfour' alt="Link Icon"/></a>
+                        <a className="nav-link" href="#!" onClick={() => (reRenderElement(2))}>API <img src={link} className='sixfour' alt="Link Icon"/></a>
 
                     </nav>
                     </div>
